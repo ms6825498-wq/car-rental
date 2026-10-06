@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEasy - Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">🚗 Drive<span>Easy</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cars">Cars</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="menu-btn">☰</button>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="small-title">PREMIUM CAR RENTAL</p>
+        <h1>Rent Your Perfect Car</h1>
+        <p>
+            Comfortable, affordable and reliable cars for your next journey.
+        </p>
+
+        <a href="#cars" class="hero-btn">Browse Cars</a>
+    </div>
+</section>
+
+<section class="search-box">
+    <div>
+        <label>Pick-up Location</label>
+        <input type="text" id="location" placeholder="e.g. Mathura">
+    </div>
+
+    <div>
+        <label>Pick-up Date</label>
+        <input type="date" id="pickupDate">
+    </div>
+
+    <div>
+        <label>Return Date</label>
+        <input type="date" id="returnDate">
+    </div>
+
+    <button onclick="searchCars()">Search Cars</button>
+</section>
+
+<section class="cars-section" id="cars">
+
+    <div class="section-heading">
+        <p>OUR FLEET</p>
+        <h2>Choose Your Car</h2>
+    </div>
+
+    <div class="filter-buttons">
+        <button onclick="filterCars('all')">All</button>
+        <button onclick="filterCars('sedan')">Sedan</button>
+        <button onclick="filterCars('suv')">SUV</button>
+        <button onclick="filterCars('hatchback')">Hatchback</button>
+    </div>
+
+    <div class="car-grid">
+
+        <div class="car-card" data-category="sedan">
+            <div class="car-image">🚘</div>
+
+            <div class="car-info">
+                <span class="category">SEDAN</span>
+                <h3>Honda City</h3>
+
+                <div class="features">
+                    <span>👤 5 Seats</span>
+                    <span>⚙️ Automatic</span>
+                    <span>⛽ Petrol</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹1,800</strong> / day
+                </div>
+
+                <button
+                    class="rent-btn"
+                    onclick="openBooking('Honda City', 1800)">
+                    Rent Now
+                </button>
+            </div>
+        </div>
+
+        <div class="car-card" data-category="suv">
+            <div class="car-image">🚙</div>
+
+            <div class="car-info">
+                <span class="category">SUV</span>
+                <h3>Hyundai Creta</h3>
+
+                <div class="features">
+                    <span>👤 5 Seats</span>
+                    <span>⚙️ Automatic</span>
+                    <span>⛽ Petrol</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹2,500</strong> / day
+                </div>
+
+                <button
+                    class="rent-btn"
+                    onclick="openBooking('Hyundai Creta', 2500)">
+                    Rent Now
+                </button>
+            </div>
+        </div>
+
+        <div class="car-card" data-category="hatchback">
+            <div class="car-image">🚗</div>
+
+            <div class="car-info">
+                <span class="category">HATCHBACK</span>
+                <h3>Maruti Swift</h3>
+
+                <div class="features">
+                    <span>👤 5 Seats</span>
+                    <span>⚙️ Manual</span>
+                    <span>⛽ Petrol</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹1,200</strong> / day
+                </div>
+
+                <button
+                    class="rent-btn"
+                    onclick="openBooking('Maruti Swift', 1200)">
+                    Rent Now
+                </button>
+            </div>
+        </div>
+
+        <div class="car-card" data-category="suv">
+            <div class="car-image">🚘</div>
+
+            <div class="car-info">
+                <span class="category">SUV</span>
+                <h3>Toyota Fortuner</h3>
+
+                <div class="features">
+                    <span>👤 7 Seats</span>
+                    <span>⚙️ Automatic</span>
+                    <span>⛽ Diesel</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹4,500</strong> / day
+                </div>
+
+                <button
+                    class="rent-btn"
+                    onclick="openBooking('Toyota Fortuner', 4500)">
+                    Rent Now
+                </button>
+            </div>
+        </div>
+
+        <div class="car-card" data-category="sedan">
+            <div class="car-image">🚖</div>
+
+            <div class="car-info">
+                <span class="category">SEDAN</span>
+                <h3>Hyundai Verna</h3>
+
+                <div class="features">
+                    <span>👤 5 Seats</span>
+                    <span>⚙️ Automatic</span>
+                    <span>⛽ Petrol</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹1,700</strong> / day
+                </div>
+
+                <button
+                    class="rent-btn"
+                    onclick="openBooking('Hyundai Verna', 1700)">
+                    Rent Now
+                </button>
+            </div>
+        </div>
+
+        <div class="car-card" data-category="hatchback">
+            <div class="car-image">🚕</div>
+
+            <div class="car-info">
+                <span class="category">HATCHBACK</span>
+                <h3>Tata Altroz</h3>
+
+                <div class="features">
+                    <span>👤 5 Seats</span>
+                    <span>⚙️ Manual</span>
+                    <span>⛽ Petrol</span>
+                </div>
+
+                <div class="price">
+                    <strong>₹1,300</strong> / day
+                </div>
+
+                <button
+                    class="rent-btn"
+                    onclick="openBooking('Tata Altroz', 1300)">
+                    Rent Now
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div>
+        <p class="small-title">WHY CHOOSE US</p>
+        <h2>Easy & Reliable Car Rental</h2>
+        <p>
+            DriveEasy provides affordable rental cars with simple booking,
+            transparent pricing and flexible rental periods.
+        </p>
+    </div>
+
+    <div class="about-cards">
+        <div>
+            <span>💰</span>
+            <h3>Affordable</h3>
+            <p>Competitive daily rental prices.</p>
+        </div>
+
+        <div>
+            <span>🛡️</span>
+            <h3>Safe</h3>
+            <p>Well-maintained vehicles.</p>
+        </div>
+
+        <div>
+            <span>⚡</span>
+            <h3>Easy Booking</h3>
+            <p>Quick and simple reservation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Need Help?</h2>
+    <p>Call us for booking and availability.</p>
+    <h3>📞 +91 98765 43210</h3>
+</section>
+
+<footer>
+    <p>© 2026 DriveEasy Car Rental. All Rights Reserved.</p>
+</footer>
+
+
+<!-- BOOKING POPUP -->
+
+<div class="modal" id="bookingModal">
+
+    <div class="modal-content">
+
+        <button class="close-btn" onclick="closeBooking()">×</button>
+
+        <h2>Book Your Car</h2>
+
+        <p id="selectedCar"></p>
+
+        <label>Your Name</label>
+        <input type="text" id="customerName" placeholder="Enter your name">
+
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter phone number">
+
+        <label>Pick-up Date</label>
+        <input type="date" id="bookingPickup">
+
+        <label>Return Date</label>
+        <input type="date" id="bookingReturn">
+
+        <div class="total">
+            Total: <span id="totalPrice">₹0</span>
+        </div>
+
+        <button class="confirm-btn" onclick="confirmBooking()">
+            Confirm Booking
+        </button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
